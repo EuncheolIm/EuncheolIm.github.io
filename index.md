@@ -10,7 +10,7 @@ My ultimate research goal is to enable robots to be effectively utilized in real
 <br/>
 
 # Now
-* Ph.D. student in the Department of Electrical and Electronics Engineering at Korea University (KU), and a member of the <span class="skyblue-text"> Advanced Robot Control Lab (ARC)</span> at the Korea Institute of Science and Technology (KIST).”
+* Ph.D. student in the Department of Electrical and Electronics Engineering at Korea University (KU), and a member of the <span class="skyblue-text"> Advanced Robot Control Lab (ARC)</span> at the Korea Institute of Science and Technology (KIST).
 
 <br/>
 
