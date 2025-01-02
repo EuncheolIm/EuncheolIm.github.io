@@ -3,24 +3,17 @@ layout: about
 ---
 
 # About Me
-There is no specific format here. You can fill out the form you want.  
-For example, you might want to write a brief introduction about your self, experience, interests, publications, and other information.  
-I wrote "about me", "career", and "interests" on this page as an example.  
+I am interested in manipulation using robotic arms. My current research focuses on <span class="skyblue-text">manipulation </span> , specifically object manipulation using Model Predictive Control (MPC). Recently, I have also developed an interest in loco-manipulation. To explore this field, I am conducting study(research) on <span class="skyblue-text"> locomotion</span>  using Whole Body Control (WBC).
+
+My ultimate research goal is to enable robots to be effectively utilized in real-world applications. To achieve this, I aim to develop technologies that allow robust dual-arm manipulation on floating bases, rather than fixed bases, even in challenging environments.
 
 <br/>
 
-# Career
-* Second Company (2012/01 ~ )
-  * Web Application Firewall
-    * Developed TCP network acceleration module.
-    * Developde Application User Interface.
-* First Company (2011/01 ~ 2011/12)
-  * VPN Development Company
-  * Team Leader of VPN Development Div.
+# Now
+* Ph.D. student in the Department of Electrical and Electronics Engineering at Korea University (KU), and a member of the <span class="skyblue-text"> Advanced Robot Control Lab (ARC)</span> at the Korea Institute of Science and Technology (KIST).”
 
 <br/>
 
-# Interests
-I am interested in technology trends.  
-I'm not afraid to learn languages, but I enjoy using Python.  
-I like to automate and reduce annoying things.  
+# Research Area
+* Manipulator, Dual-arm robot, Model Predictive Control (MPC), Optimal Control, Humanoid
+
