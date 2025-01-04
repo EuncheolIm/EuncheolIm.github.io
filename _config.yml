@@ -17,7 +17,7 @@ social:
   behance:
   bitbucket:
   dribbble:
-  facebook: Test
+  facebook:
   flickr:
   github: EuncheolIm
   google_plus:
@@ -31,10 +31,11 @@ social:
   steam:
   tumblr:
   gitlab:
-  twitter: Test
+  twitter: 
   vimeo:
   wordpress:
-  youtube:
+  # youtube: maly3384
+  youtube: "https://www.youtube.com/@maly3384"
   default_txt: "Follow On"
 
 # Build settings
