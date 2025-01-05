@@ -7,7 +7,7 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 # Author
 author:
   name: Euncheol Im
-  desc: Hello nice to meet you
+  desc: 
   email: euncheol.im@kist.re.kr
   selfie: assets/img/profile.jpg
 

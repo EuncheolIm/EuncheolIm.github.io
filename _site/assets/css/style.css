@@ -4,3 +4,21 @@
 .skyblue-text {
     color: skyblue;
 }
+.bold-text {
+    font-weight: bold;
+}
+
+.red-text a {
+    color: red !important;
+    font-weight: bold;
+}
+
+.dodgerblue-text a {
+    color: dodgerblue !important;
+    font-weight: bold;
+}
+
+.deepskyblue-text a {
+    color: deepskyblue !important;
+    font-weight: bold;
+}
