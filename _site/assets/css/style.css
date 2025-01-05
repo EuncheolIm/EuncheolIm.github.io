@@ -5,17 +5,17 @@
     color: skyblue;
 }
 .bold-text {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .red-text a {
     color: red !important;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .dodgerblue-text a {
     color: dodgerblue !important;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .deepskyblue-text a {
