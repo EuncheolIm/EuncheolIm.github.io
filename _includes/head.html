@@ -17,6 +17,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon.ico" | relative_url }}">
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body);"></script>
+
+
   <!-- Google Analytics -->
   {% if site.google_analytics %}
   <script>
@@ -34,6 +41,8 @@
 
       ga('create', '{{ site.google_analytics }}', 'auto');
       ga('send', 'pageview');
+
+      
 
   </script>
   {% endif %}
