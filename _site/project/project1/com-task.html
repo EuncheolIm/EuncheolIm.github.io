@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EuncheolIm.github.io</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="/assets/css/style.css"> 
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome-all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body);"></script>
+
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">EuncheolIm.github.io</h2>
+        </a>
+        <ul>
+          <li><a href="/">About</a></li>
+          <!-- <li><a href="/portfolio/">Portfolio</a></li> -->
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/publication/">Publication</a></li>
+          <li><a href="/project/">Project</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <h1 id="implement-add-com-task">Implement add COM TASK</h1>
+
+<h3 id="how-can-base-com-task-add-">How can Base COM TASK add ?</h3>
+<p>For adding COM TASK in Whole Body Control (WBC), we have to add \(\ddot{q}\) in decision variables.
+So, QP form of GRF problem can be changed as follows:</p>
+
+<p>
+$$
+\begin{align}
+\mathbf{f}^d = \arg \underset{\mathbf{\ddot{q}}, \mathbf{f}}{\min}
+ \underbrace{(\mathbf{A}_c\mathbf{X} - \mathbf{b})^\top \mathbf{S}_1 (\mathbf{A}_c\mathbf{X} - \mathbf{b})}_{C_1} + \underbrace{\mathbf{X}^T \mathbf{S}_2 \mathbf{X}}_{C_2} \\
+\end{align}
+$$
+$$
+\text{s.t.} \quad 
+\mathbf{M}\mathbf{\ddot{q}} - \mathbf{J}^T_c\mathbf{f} = \mathbf{Sh}, \\
+\mathbf{\underline{d}} \leq \mathbf{C}\mathbf{f} \leq \mathbf{\bar{d}},\\
+\mathbf{\underline{c}} \leq \mathbf{f_z} \leq \mathbf{\bar{c}}
+$$
+where,
+$$
+\begin{align*}
+\underbrace{\begin{bmatrix}
+  0_{n+6} &amp;&amp; I_3 &amp;&amp; 0_3 &amp;&amp; I_3 &amp;&amp; 0_3 \\  
+  0_{n+6} &amp;&amp; S(r_{1,{com}})_3 &amp;&amp; I_3 &amp;&amp; S(r_{2,{com}})_3 &amp;&amp; I_3
+\end{bmatrix}}_{A_c}
+\underbrace{\begin{bmatrix}
+  \ddot{q}_{n+6} \\
+  f_1 \\  
+  f_2
+\end{bmatrix}}_X &amp; =
+\underbrace{\begin{bmatrix}
+  m(\ddot{x}_{com} + g) \\  
+  I_G \dot{\omega}_b
+\end{bmatrix}}_b
+\end{align*} \\
+\begin{align*}
+\qquad \qquad \mathbf{M}\mathbf{\ddot{q}} - \mathbf{J}^T_c\mathbf{f} = \mathbf{Sh} \qquad \leftarrow \qquad   \text{floating base dynamics constraints}\\
+\begin{cases}
+\mathbf{\underline{d}} \leq \mathbf{C}\mathbf{f} \leq \mathbf{\bar{d}}, \qquad \leftarrow \qquad \text{Friction cone constraints}\\
+\mathbf{\underline{c}} \leq \mathbf{f_z} \leq \mathbf{\bar{c}}
+\end{cases}
+\end{align*}
+$$
+</p>
+<p>\(n\): Total joint degree of freedoms <br /></p>
+
+<h3 id="cost-function--">Cost function  <br /></h3>
+<ul>
+  <li>C_1 : Centroidal dynamics  <br /></li>
+  <li>C_2 : GRF, \(\ddot{q}\) regularization</li>
+</ul>
+
+<h3 id="details">Details</h3>
+<ul>
+  <li>Status: Finished</li>
+</ul>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2025-01-12 20:53:59 +0900">2025</time> Euncheol Im. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+      </span>
+    </footer>
+  </body>
+</html>

@@ -22,22 +22,6 @@ permalink: /publication/
   </div>
 </div>
 
-<!-- <div class="publication-list">
-  <div class="publication-item">
-    <div class="image-container">
-      <img src="{{ '/assets/img/Learning/ur2023_title.gif' | relative_url }}" alt="ur2023_ani" style="width: 200px; height: 170px; border: 1px solid #ccc; border-radius: 8px;">
-    </div>
-    <div class="text-container">
-      <h2><a href="{{ "/publication/paper2" | prepend: site.baseurl }}">Learning Impulse-Reduced Gait for Quadruped Robot using CMA-ES</a></h2>
-      <p>Jaesung Ahn, Euncheol Im, Yisoo Lee<sup>&dagger;</sup></p>
-      <ul>
-        <li><i class="fas fa-calendar-alt"></i> June 25, 2023</li>
-        <li><i class="fas fa-tags"></i> 2023 20th International Conference on Ubiquitous Robots (UR)</li>
-      </ul>
-    </div>
-  </div>
-</div> -->
-
 <div class="publication-list">
   <div class="publication-item">
     <div class="image-container">

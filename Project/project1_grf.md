@@ -75,3 +75,7 @@ $$
 
 ### Details
 - Status: Finished
+
+
+### Reference
+- Zhu, Zhengguo, et al. "Design and control of BRAVER: a bipedal robot actuated via proprioceptive electric motors." Autonomous Robots 47.8 (2023): 1229-1243.
