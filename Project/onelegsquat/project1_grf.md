@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Project
-permalink: /project/project1/grf
+permalink: /project/onelegsquat/project1/grf
 ---
 
 # Implement GRF using qpOASEE

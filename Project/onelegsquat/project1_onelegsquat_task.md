@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Project
-permalink: /project/project1/onelegsquat_task
+permalink: /project/onelegsquat/project1/onelegsquat_task
 ---
 
 # Implement add COM TASK

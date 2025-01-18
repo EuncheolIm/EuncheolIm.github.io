@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EuncheolIm.github.io</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="/assets/css/style.css"> 
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome-all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body);"></script>
+
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">EuncheolIm.github.io</h2>
+        </a>
+        <ul>
+          <li><a href="/">About</a></li>
+          <!-- <li><a href="/portfolio/">Portfolio</a></li> -->
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/publication/">Publication</a></li>
+          <li><a href="/project/">Project</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <h1 id="implement-dcm">Implement DCM</h1>
+
+<h3 id="divergent-component-of-motion-dcm">Divergent Component of Motion (DCM)</h3>
+<p>Center of mass (COM) dynamics can split into stable and unstable part.
+The state variable related to the unstable part of the dynamics has been referred to as as <span class="bold-text">“(instantaneous) Capture Point”(CP)</span> by Pratt and Koolen et al., <span class="bold-text">“Extrapolated Center of Mass”</span> by Hof et al., and <span class="bold-text">“Divergent Component of Motion”(DCM)</span> by Takenaka et al. <br />
+<span class="bold-text">CP</span> point on the ground where the robot has to step to come to a stop asymptotically in 2D plane <br />
+However, <span class="bold-text">DCM</span> is a point in 3D. <span class="bold-text">CP</span> and <span class="bold-text">DCM</span>(projected to floor) are equivalent, but not for 3D.</p>
+
+<h3 id="dcm-definition">DCM definition</h3>
+<div class="publication-list" style="display: flex; align-items: center;">
+  <div class="image-container">
+    <img src="/assets/img/Project2/DCM_in_3Dspace.png" alt="DCM_in_3Dspace" style="width: 200px; height: 200px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+  <div class="text-container" style="margin-left: 30px;">
+    <p>
+      The DCM is defined as a point at a certain distance in front of the COM
+      $$ \mathbf{\xi} = \mathbf{x} + b\mathbf{\dot{x}}$$
+      $$ \mathbf{\dot{x}} = -\frac{1}{b}(\mathbf{x}-\mathbf{\xi})$$
+      $$ \dot{\xi} = -\frac{1}{b}\mathbf{x} + \frac{1}{b}\mathbf{\xi} \frac{b}{m}\mathbf{F}$$
+    </p>
+  </div>
+</div>
+
+<h3 id="enhanced-centroidal-moment-pivot-point-ecmp">Enhanced Centroidal Moment Pivot Point (eCMP)</h3>
+<p>Genarally, a robot is subject to gravity and external forces. We design external forces being appropriate for the locomotion task while fullfilling the feasibility constraint (CoP in base of support).
+To simplify this design, make use of a force-to-point transformation similar as <span class="bold-text">Linear Inverted Pendulum (LIP)</span> model. 
+External forces in a simple repelling force law encode based on the difference of the COM and the so-called eCMP <br /> : \(\mathbf{F}_{ext}=s(x-r_{ecmp})\).
+\(\rightarrow\) Total force \(\mathbf{F}\) = \(\mathbf{F}_{ext}+\mathbf{F}_{g} = s(x-r_{ecmp}+mg)\). <br /></p>
+
+<p>Using Total Force,  DCM dynamics can be changed as follows:<br />
+\(\mathbf{\dot{\xi}} = (\frac{bs}{m}-\frac{1}{b})\mathbf{x} + \frac{1}{b}\mathbf{\xi} - \frac{bs}{m}\mathbf{r}_{ecmp}+b\mathbf{g}\) <br />
+\(\mathbf{\dot{\xi}} = \frac{1}{b}\mathbf{\xi} - \frac{1}{b}\mathbf{r}_{ecmp}+b\mathbf{g}\) <br />
+This equation means DCM dynamics decoupled from COM dynamics. It is crucial only stabilizes the unstable DCM dynamics while leaving the natually stable COM dynamics unaffected.</p>
+
+<h3 id="virtual-repellent-point-vrp">Virtual Repellent Point (VRP)</h3>
+<p>Virtual Repellent Point is added gravity affect in \(\mathbf{r}_{ecmp}\). \(\mathbf{r}_{vrp} = \mathbf{r}_{ecmp} + [0,  0, b^2g]^T = \mathbf{r}_{ecmp} + [0, 0, \Delta z_{vrp}]^T\).
+So, DCM dynamics can represent \(\mathbf{\dot{\xi}} = \frac{1}{b}(\mathbf{\xi} - \mathbf{r}_{vrp})\).
+And, in the whole paper, \(b = \sqrt{\Delta z_{vrp}/g}\). <br /></p>
+
+<div class="publication-list" style="display: flex; align-items: center;">
+  <div class="image-container" style="display: flex; gap: 0px;">
+    <img src="/assets/img/Project2/Fig_2.png" alt="Fig2" style="width: 220px; height: 220px; border: 1px solid #ccc; border-radius: 8px;" />
+    <img src="/assets/img/Project2/Fig_3.png" alt="Fig3" style="width: 220px; height: 220px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+    <p>
+      $$ \qquad \text{DCM definition : } \mathbf{\xi} = \mathbf{x} +\sqrt{\Delta z_{vrp}/g} $$ 
+      $$ \qquad \text{DCM dynamics : } \mathbf{\dot{\xi}} = \sqrt{\Delta g/z_{vrp}} (\mathbf{\xi} - \mathbf{r}_{vrp}) $$ 
+      $$ \qquad \text{COM dynamics : } \mathbf{\dot{x}} = -\sqrt{\Delta g/z_{vrp}} (\mathbf{x} - \mathbf{\xi}) $$ 
+      $$ \qquad \text{External forces : } \mathbf{F}_{ext} = \frac{mg}{\Delta z_{vrp}}(\mathbf{x}-\mathbf{r}_{ecmp})$$
+    </p>
+  <div class="text-container" style="margin-left: 30px;">
+  </div>
+</div>
+
+<h3 id="gerneration-of-nominal-divergent-component-of-motion-reference">Gerneration of Nominal Divergent Component of Motion Reference</h3>
+<p>4 assumptions
+1) A1: robot’s feet are point feet (corresponding to foot centers if robot has finite-sized feet).
+2) A2: changes in angular momentum \(L\) are zero (\(\dot{L} = 0\)).
+3) A3: instantaneous transitions between left and right SS phases [no double support (DS)].
+4) A4: no impacts during support transitions.
+To comply with the assumptions A1 and A2, we choose \(r_{f,i}\), eCMP and CoP (see Fig. 4) to be coincident for planning. <br />
+<br /></p>
+
+<p>the desired DCM locations at the end of each step (see Fig. 5) via recursion: <br />
+\(\xi_{d, \text{eos}, i-1} = \xi_{d, \text{ini}, i} = \mathbf{r}_{\text{vrp}, d, i} + e^{-\sqrt{\frac{g}{\Delta z_{\text{vrp}}}} t_{\text{step}, i}} \cdot  \left( \xi_{d, \text{eos}, i} - \mathbf{r}_{\text{vrp}, d, i} \right)\), <br />
+where, \(\xi_{d, \text{ini}, i}\) is \(i\) th initial desired DCM.<br />
+ For planning, we assume that the DCM will come to a stop over the final previewed foot position, i.e.,\(\xi_{d, \text{ini}, N-1} = r_{vrp,d,N}\). Now, based this equation the reference trajectories for the DCM position (bold blue lines in Fig. 5) can be computed as <br />
+\(\xi_{d, i}(t) = \mathbf{r}_{\text{vrp}, d, i}  + e^{\sqrt{\frac{g}{\Delta z_{\text{vrp}}}} (t - t_{\text{step}, i})} \cdot  \left( \xi_{d, \text{eos}, i} - \mathbf{r}_{\text{vrp}, d, i} \right)\). <br />
+The corresponding DCM velocity trajectories are found via derivation of above equation.
+\(\dot{\xi}_{d, i}(t) = \sqrt{\frac{g}{\Delta z_{\text{vrp}}}} \cdot e^{\sqrt{\frac{g}{\Delta z_{\text{vrp}}}} (t - t_{\text{step}, i})} \cdot  \left( \xi_{d, \text{eos}, i} - \mathbf{r}_{\text{vrp}, d, i} \right)\)</p>
+
+<div class="publication-list" style="display: flex; align-items: center;  justify-content: center;">
+  <div class="image-container" style="display: flex; gap: 5px;  justify-content: center;">
+    <img src="/assets/img/Project2/Fig_4.png" alt="Fig4" style="width: 310px; height: 310px; border: 1px solid #ccc; border-radius: 8px;" />
+    <img src="/assets/img/Project2/Fig_5.png" alt="Fig5" style="width: 310px; height: 310px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+  <div class="text-container" style="margin-left: 30px;">
+  </div>
+</div>
+
+<h3 id="implement-result">Implement Result</h3>
+<p>When 6 steps are given,
+\(\Delta Z_{vrp} = 0.6 (m)\) and step length \(= 0.2\), dt \(=0.001\)</p>
+<div class="publication-list" style="display: flex; align-items: center;  justify-content: center;">
+  <div class="image-container" style="display: flex; gap: 10px;  justify-content: center;">
+    <img src="/assets/img/Project2/DCM_result.png" alt="DCM_result" style="width: 700px; height: 300px; border: 1px solid #ccc; border-radius: 8px;" />
+  </div>
+  <div class="text-container" style="margin-left: 30px;">
+  </div>
+</div>
+
+<h3 id="details">Details</h3>
+<ul>
+  <li>Status: Finished.</li>
+</ul>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li>Englsberger, Johannes, Christian Ott, and Alin Albu-Schäffer. “Three-dimensional bipedal walking control based on divergent component of motion.” Ieee transactions on robotics 31.2 (2015): 355-368.</li>
+</ul>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2025-01-19 02:12:17 +0900">2025</time> Euncheol Im. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+      </span>
+    </footer>
+  </body>
+</html>
