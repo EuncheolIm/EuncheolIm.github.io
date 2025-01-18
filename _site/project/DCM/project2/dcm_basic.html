@@ -61,7 +61,7 @@ However, <span class="bold-text">DCM</span> is a point in 3D. <span class="bold-
 <h3 id="dcm-definition">DCM definition</h3>
 <div class="publication-list" style="display: flex; align-items: center;">
   <div class="image-container">
-    <img src="/assets/img/Project2/DCM_in_3Dspace.png" alt="DCM_in_3Dspace" style="width: 200px; height: 200px; border: 1px solid #ccc; border-radius: 8px;" />
+    <img src="/assets/img/Project2/DCM_in_3Dspace.png" alt="DCM_in_3Dspace" style="width: 300px; height: 300px; border: 1px solid #ccc; border-radius: 8px;" />
   </div>
   <div class="text-container" style="margin-left: 30px;">
     <p>
@@ -89,27 +89,26 @@ This equation means DCM dynamics decoupled from COM dynamics. It is crucial only
 So, DCM dynamics can represent \(\mathbf{\dot{\xi}} = \frac{1}{b}(\mathbf{\xi} - \mathbf{r}_{vrp})\).
 And, in the whole paper, \(b = \sqrt{\Delta z_{vrp}/g}\). <br /></p>
 
-<div class="publication-list" style="display: flex; align-items: center;">
-  <div class="image-container" style="display: flex; gap: 0px;">
-    <img src="/assets/img/Project2/Fig_2.png" alt="Fig2" style="width: 220px; height: 220px; border: 1px solid #ccc; border-radius: 8px;" />
-    <img src="/assets/img/Project2/Fig_3.png" alt="Fig3" style="width: 220px; height: 220px; border: 1px solid #ccc; border-radius: 8px;" />
+<div class="publication-list" style="display: flex; align-items: center;  justify-content: center;">
+  <div class="image-container" style="display: flex; gap: 5px;  justify-content: center;">
+    <img src="/assets/img/Project2/Fig_2.png" alt="Fig2" style="width: 310px; height: 310px; border: 1px solid #ccc; border-radius: 8px;" />
+    <img src="/assets/img/Project2/Fig_3.png" alt="Fig3" style="width: 310px; height: 310px; border: 1px solid #ccc; border-radius: 8px;" />
   </div>
-    <p>
-      $$ \qquad \text{DCM definition : } \mathbf{\xi} = \mathbf{x} +\sqrt{\Delta z_{vrp}/g} $$ 
-      $$ \qquad \text{DCM dynamics : } \mathbf{\dot{\xi}} = \sqrt{\Delta g/z_{vrp}} (\mathbf{\xi} - \mathbf{r}_{vrp}) $$ 
-      $$ \qquad \text{COM dynamics : } \mathbf{\dot{x}} = -\sqrt{\Delta g/z_{vrp}} (\mathbf{x} - \mathbf{\xi}) $$ 
-      $$ \qquad \text{External forces : } \mathbf{F}_{ext} = \frac{mg}{\Delta z_{vrp}}(\mathbf{x}-\mathbf{r}_{ecmp})$$
-    </p>
   <div class="text-container" style="margin-left: 30px;">
   </div>
 </div>
 
+<p>\(\text{DCM definition : } \mathbf{\xi} = \mathbf{x} +\sqrt{\Delta z_{vrp}/g}\) 
+\(\text{DCM dynamics : } \mathbf{\dot{\xi}} = \sqrt{\Delta g/z_{vrp}} (\mathbf{\xi} - \mathbf{r}_{vrp})\) 
+\(\text{COM dynamics : } \mathbf{\dot{x}} = -\sqrt{\Delta g/z_{vrp}} (\mathbf{x} - \mathbf{\xi})\) 
+\(\text{External forces : } \mathbf{F}_{ext} = \frac{mg}{\Delta z_{vrp}}(\mathbf{x}-\mathbf{r}_{ecmp})\)</p>
+
 <h3 id="gerneration-of-nominal-divergent-component-of-motion-reference">Gerneration of Nominal Divergent Component of Motion Reference</h3>
-<p>4 assumptions
-1) A1: robot’s feet are point feet (corresponding to foot centers if robot has finite-sized feet).
-2) A2: changes in angular momentum \(L\) are zero (\(\dot{L} = 0\)).
-3) A3: instantaneous transitions between left and right SS phases [no double support (DS)].
-4) A4: no impacts during support transitions.
+<p>4 assumptions <br />
+1) A1: robot’s feet are point feet (corresponding to foot centers if robot has finite-sized feet).<br />
+2) A2: changes in angular momentum \(L\) are zero (\(\dot{L} = 0\)).<br />
+3) A3: instantaneous transitions between left and right SS phases [no double support (DS)].<br />
+4) A4: no impacts during support transitions.<br />
 To comply with the assumptions A1 and A2, we choose \(r_{f,i}\), eCMP and CoP (see Fig. 4) to be coincident for planning. <br />
 <br /></p>
 
@@ -148,14 +147,14 @@ The corresponding DCM velocity trajectories are found via derivation of above eq
 
 <h3 id="reference">Reference</h3>
 <ul>
-  <li>Englsberger, Johannes, Christian Ott, and Alin Albu-Schäffer. “Three-dimensional bipedal walking control based on divergent component of motion.” Ieee transactions on robotics 31.2 (2015): 355-368.</li>
+  <li>Englsberger, Johannes, Christian Ott, and Alin Albu-Schäffer. “Three-dimensional bipedal walking control based on divergent component of motion.” IEEE transactions on robotics 31.2 (2015): 355-368.</li>
 </ul>
 
     </main>
 
     <footer>
       <span>
-        &copy; <time datetime="2025-01-19 02:12:17 +0900">2025</time> Euncheol Im. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2025-01-19 02:16:44 +0900">2025</time> Euncheol Im. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>
