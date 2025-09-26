@@ -1,10 +1,10 @@
 ---
 layout: base
-title: Blog
-permalink: /blog/
+title: Paper review
+permalink: /Paper_review/
 ---
 
-# Blog
+# Paper review
 Welcome to my blog! Here you'll find updates and posts.....
 
 
