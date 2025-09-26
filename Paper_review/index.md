@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Paper review
-permalink: /Paper_review/
+permalink: /paper_review/
 ---
 
 # Paper review

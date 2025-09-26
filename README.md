@@ -27,6 +27,12 @@ Based on Chester How's tale-theme(https://github.com/chesterhow/tale) with a few
 5. Run the Jekyll server
     * jekyll serve
 
+* Update
+1. Change some part that you want to change
+2. Check "bundle exec jekyll serve "
+3. "bundle update"  
+4. git upload
+
 
 ## Structure
 * Here are the main files of the template
