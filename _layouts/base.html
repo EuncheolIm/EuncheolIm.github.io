@@ -11,9 +11,9 @@
         </a>
         <ul>
           <li><a href="{{ '/' | prepend: site.baseurl }}" {% if page.url == '/' %}class="active"{% endif %}>About</a></li>
-          <li><a href="{{ '/paper_review/' | prepend: site.baseurl }}" {% if page.url contains '/paper_review' %}class="active"{% endif %}>Paper Review</a></li>
           <li><a href="{{ '/publication/' | prepend: site.baseurl }}" {% if page.url contains '/publication' %}class="active"{% endif %}>Publication</a></li>
-          <li><a href="{{ '/project/' | prepend: site.baseurl }}" {% if page.url contains '/project' %}class="active"{% endif %}>Project</a></li>
+          <li><a href="{{ '/paper_review/' | prepend: site.baseurl }}" {% if page.url contains '/paper_review' %}class="active"{% endif %}>Paper Review</a></li>
+          <li><a href="{{ '/project/' | prepend: site.baseurl }}" {% if page.url contains '/project' %}class="active"{% endif %}>Toy Project</a></li>
         </ul>
       </div>
     </nav>
