@@ -81,3 +81,20 @@ img {
 td {
   vertical-align: top;
 }
+
+.bold-text { font-weight: bold; }
+.dodgerblue-text a { color: dodgerblue; font-weight: bold; }
+.deepskyblue-text a { color: deepskyblue; font-weight: bold; }
+
+section { margin-bottom: 30px; }
+
+figure { margin-bottom: 20px; }
+
+figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: $default-color;
+}
+
+mjx-container { font-size: 100% !important; line-height: 1 !important; }
+mjx-math { vertical-align: middle !important; }
