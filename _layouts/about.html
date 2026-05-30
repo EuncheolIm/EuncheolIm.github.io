@@ -1,26 +1,26 @@
 ---
-layout: base 
+layout: base
 ---
 
-<div class="about">
-  <div class="profile">
+<div class="about-wrapper">
+  <aside class="profile-sidebar">
     <img class="selfie" alt="{{ site.author.name }}" src="{{ site.author.selfie }}" />
-    <div class="info">
-      <div class="title">{{ site.author.name }}</div>
-      <div class="description">{{ site.author.desc }}</div>
+    <div class="title">{{ site.author.name }}</div>
+    <div class="affiliation">
+      <span class="badge">Ph.D. Student</span>
+      <span class="badge">KIST &middot; Korea University</span>
     </div>
-  </div>
+    <div class="cv-btn-wrapper">
+      <a href="{{ '/assets/CV_EuncheolIm.pdf' | relative_url }}" class="cv-btn" target="_blank">
+        <i class="fas fa-file-pdf"></i> CV
+      </a>
+    </div>
+    <ul class="social-icons">
+      {% include icons.html %}
+    </ul>
+  </aside>
 
-
-  <div class="content">
+  <div class="about-content">
     {{ content }}
-    </br>
-    <div class="social-layer">
-      <div class="social-icons">
-        <ul>
-          {% include icons.html %}
-        </ul>
-      </div>
-    </div>
   </div>
 </div>

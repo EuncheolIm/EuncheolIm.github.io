@@ -18,7 +18,7 @@ permalink: /publication/paper3/
 <section>
   <h3>Authors</h3>
   <ul>
-    <li>Jinho Kim, Euncheol Im</li>
+    <li>Jinho Kim, <strong>Euncheol Im</strong></li>
     <li>Corresponding author : Yisoo Lee, Youngsu Cha</li>
   </ul>
 </section>

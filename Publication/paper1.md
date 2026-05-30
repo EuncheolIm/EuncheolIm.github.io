@@ -19,7 +19,7 @@ permalink: /publication/paper1/
 <section>
   <h3>Authors</h3>
   <ul>
-    <li>Euncheol Im</li>
+    <li><strong>Euncheol Im</strong></li>
     <li>Corresponding author : JinHwan Ko</li>
   </ul>
 </section>

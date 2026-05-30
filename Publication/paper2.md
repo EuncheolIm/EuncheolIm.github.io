@@ -18,7 +18,7 @@ permalink: /publication/paper2/
 <section>
   <h3>Authors</h3>
   <ul>
-    <li>Jaesung Ahn, Euncheol Im</li>
+    <li>Jaesung Ahn, <strong>Euncheol Im</strong></li>
     <li>Corresponding author : Yisoo Lee</li>
   </ul>
 </section>

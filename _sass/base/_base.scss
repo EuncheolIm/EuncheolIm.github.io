@@ -48,8 +48,13 @@ ul {
 }
 
 a {
-  color: #999;
+  color: $accent-color;
   text-decoration: none;
+  @include transition(color .2s ease);
+
+  &:hover {
+    color: darken($accent-color, 12%);
+  }
 }
 
 blockquote {
